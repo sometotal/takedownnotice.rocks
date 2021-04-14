@@ -1,0 +1,30 @@
+{% set episodeListHeadingLevel = 'h3' if episodeListHeading else 
+  'h2' %}
+{% if episodeListItems.length %}
+  <section class="l-container l-measure">
+    <div class="l-stack">
+      {% if episodeListHeading %}
+        <h2 class="h4">{{ episodeListHeading }}</h2>
+      {% endif %}
+      <ul class="l-post-list" reversed>
+        {% for item in episodeListItems %}
+          <li class="post-stack-item">
+            <{{episodeListHeadingLevel}} class="h3">
+              <a href="{{ item.url }}" rel="bookmark">Ep {{item.data.id}} - {{ item.data.title }}</a>
+            </{{episodeListHeadingLevel}}>
+            <p>
+              <time class="post-stack-date" datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+            </p>
+            <p>
+              {% if item.data.description %}
+                {{item.data.description}}
+                <a href="{{ item.url }}" aria-hidden="true" class="read-more">Read more</a>
+              {% endif %}
+            </p>
+            <p><a href="{{item.data.listen}}" target="_blank">Listen or download</a></p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endif %}

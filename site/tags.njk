@@ -1,0 +1,33 @@
+--- 
+title: Tags 
+pagination: 
+  data: collections 
+  size: 1
+  alias: tag 
+  filter: 
+    - all 
+    - nav 
+    - episode
+    - episodes
+    - tagList 
+    - episodeFeed 
+addAllPagesToCollections: true 
+permalink: /tags/{{ tag }}/ 
+---
+
+{% extends 'layouts/base.njk' %}
+
+{# Intro content #}
+{% set introHeading %}Episodes{% endset %}
+
+{# Episode list content #}
+{% set episodeListHeading %}Episodes tagged: “{{ tag }}”{% endset %}
+{% set episodeListItems = collections[tag] %}
+
+{% block content %}
+  <div class="l-stack l-stack--large">
+    {% include "partials/intro.njk" %}
+    {% include "partials/episode-list.njk" %}
+    {% include "partials/pagination.njk" %}
+  </div>
+{% endblock %}

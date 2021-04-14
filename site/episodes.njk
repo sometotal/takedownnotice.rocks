@@ -1,0 +1,29 @@
+--- 
+title: Episodes
+pagination: 
+  data: collections.episodes
+  size: 8
+  alias: episodes
+---
+
+{% extends 'layouts/base.njk' %}
+
+{# Intro content #}
+{% set introHeading %}Episodes{% endset %}
+
+{# Episode list content #}
+{% set episodeListItems = episodes %}
+
+{% if episodeListItems.length < collections.episodes.length %}
+  {% set paginationNextText = 'Next' %}
+  {% set paginationNextUrl = pagination.nextPageHref %}
+  {% set paginationPrevUrl = pagination.previousPageHref %}
+{% endif %}
+
+{% block content %}
+  <div class="l-stack l-stack--large l-stack--large">
+    {% include "partials/intro.njk" %}
+    {% include "partials/episode-list.njk" %}
+    {% include "partials/pagination.njk" %}
+  </div>
+{% endblock %}
