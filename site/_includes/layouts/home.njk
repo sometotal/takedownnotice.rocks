@@ -1,0 +1,21 @@
+{% extends 'layouts/base.njk' %}
+
+{% set introSummary = content | safe %}
+
+{# Episode list content #}
+{% set episodeListHeading = episodesHeading %}
+{% set episodeListItems = collections.episodeFeed %}
+
+{# Episodes link #}
+{% if episodeListItems.length < collections.episodes.length %}
+  {% set paginationNextText = allEpisodesText %}
+  {% set paginationNextUrl = '/episodes' %}
+{% endif %}
+
+{% block content %}
+  <div class="l-stack l-stack--large">
+    {% include "partials/intro.njk" %}
+    {% include "partials/episode-list-home.njk" %}
+    {% include "partials/pagination.njk" %}
+  </div>
+{% endblock %}

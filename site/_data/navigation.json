@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "text": "Home",
+      "url": "/",
+      "external": false
+    },
+    {
+      "text": "Episodes",
+      "url": "/episodes",
+      "external": false
+    },
+    {
+      "text": "Feed",
+      "url": "/feed.xml",
+      "external": true
+    }
+  ]
+}
