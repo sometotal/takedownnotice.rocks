@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Take Down Notice</title>
+  <subtitle></subtitle>
+  <link href="/feed.xml" rel="self"/>
+  <link href="/"/>
+  <updated>2021-04-15T14:34:48Z</updated>
+  <id></id>
+  <author>
+    <name>Ike and Joe</name>
+    <email>hello@takedownnotice.rocks</email>
+  </author>
+  
+</feed>
